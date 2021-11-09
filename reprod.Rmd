@@ -1,0 +1,110 @@
+---
+title: 'Differential gene expression: an overrated analysis?'
+author: "Jessica A. Carballido"
+date: "11/8/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+
+```
+
+
+## Primera prueba
+Yo creo q habria q poner un texto aca diciendo cuales son las librerias q se tienen q cargar para ejecutar todo el codigo
+
+### Aprendiendo investigacion reproducible
+
+Los datos del **ejemplo** se obtienen del siguiente [repositorio](https://github.com/rfordatascience/tidytuesday/tree/master/data/2021)
+
+Para agregar un codigo R (puede ser python, java script...) y su resultado usamos:
+```{r}
+v=c(2,2,1)
+sum(v)
+sample(1:100, 3)
+```
+Por defecto esta mostrando tanto la porcion de codigo como la salida de R.
+Eso se puede modificar con parametros (opciones como eval, echo, warning, error, message, tidy, results, ...).
+Solo q se vea el codigo
+```{r, eval=FALSE}
+v=c(2,2,1)
+sum(v)
+```
+Solo q se vean los resultados
+```{r, echo=FALSE}
+v=c(2,2,1)
+sum(v)
+```
+
+Para ver todas las [OPCIONES DE LOS CHUNK](https://yihui.org/knitr/options/)
+
+Codigo inLINE
+La suma de 3+5 es siempre `r 3+5`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
