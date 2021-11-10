@@ -6,7 +6,9 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-
+library(dplyr)
+library(ggplot2)
+library(kableExtra)
 ```
 
 
@@ -41,7 +43,32 @@ Para ver todas las [OPCIONES DE LOS CHUNK](https://yihui.org/knitr/options/)
 Codigo inLINE
 La suma de 3+5 es siempre `r 3+5`
 
+Distintas formas de mostrar tablas:
 
+```{r, echo=FALSE}
+data("msleep")
+tabla = msleep %>% group_by(vore) %>% summarize_at("sleep_total", .funs = list(Media = mean, Desvio = sd)) %>% dplyr::filter(!is.na(vore)) %>% arrange(desc(Media))
+tabla
+kable(tabla)
+kable(tabla, digits = 2)
+kable(tabla, digits = 2) %>% kable_styling()
+kable(tabla, digits = 2) %>% kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = FALSE)
+
+kable(tabla, digits = 2) %>% kable_styling(bootstrap_options = c("striped", "hover"), full_width = FALSE)
+
+# striped: lineas de color distinto en las filas
+# hover: cuando paso el mouse por encima de una fila, se resalta
+# condensed: la achica un poco en el alto de las filas principalmente
+# full_width: hace q no ocupe todo el ancho
+```
+
+Para ver bases de datos enteras parcialmente:
+
+```{r, echo = F}
+msleep2 = msleep %>% dplyr::select(name, vore, sleep_total)
+kable(msleep2, digits = 2, caption = "TODA LA BASE DE DATOS") %>% kable_styling(bootstrap_options = c("striped", "hover"), full_width = FALSE) %>% scroll_box(width = "800px", height = "200px")
+
+```
 
 
 
