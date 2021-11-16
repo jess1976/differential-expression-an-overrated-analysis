@@ -13,7 +13,7 @@ library(tidyverse)
 ```
 
 ## REPORTE: Dietas en pollos
-A continuación un gráfico de las tendencias:
+A continuación un gráfico de las tendencias de crecimiento:
 
 ```{r, echo = FALSE, fig.cap="Figura 1: Modelos lineales para cada dieta relacionando la edad del pollo con su peso"}
 data("ChickWeight")
