@@ -101,3 +101,10 @@ ggplot(San, aes(x = Mes, y = medida)) + geom_point() +
   stat_smooth(method = "lm", formula = y ~ x + I(x^2), 
               aes(fill = Unidad, color = Unidad))
 # las q se sacan son q tenian NA
+# 
+Algunos = TempHum %>% filter(Ciudad_localidad %in% c("Arica", "Rapa Nui", "La Serena", "Valparaíso", "Quinta Normal", "Concepción", "Valdivia", "Punta Arenas"))
+
+# Algunos = Algunos %>% gather(key = Unidad, value = medida, Temperatura, Humedad)
+ggplot(Algunos, aes(x=Mes, y =  Temperatura)) + stat_smooth(method="lm", formula =y ~ x + I(x^2), aes(fill= Ciudad_localidad) ) + geom_point(aes(color=Ciudad_localidad))
+ggplot(Algunos, aes(x=Mes, y =  Temperatura)) + stat_smooth(method="lm", formula =y ~ x + I(x^2)) + geom_point() + facet_wrap(~Ciudad_localidad, ncol=2)
+ 
